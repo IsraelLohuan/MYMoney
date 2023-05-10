@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:mymoney/app/models/expense_model.dart';
 import 'package:mymoney/app/pages/config_expense_page.dart';
 import 'package:provider/provider.dart';
-
 import 'controllers/home_controller.dart';
 import 'pages/home_page.dart';
 import 'pages/splash_page.dart';
-import 'shared/services/storage/storage.dart';
 import 'shared/services/storage/storage_impl.dart';
 import 'shared/ui/theme_ui.dart';
 
@@ -17,7 +14,7 @@ class AppWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        Provider<Storage>(
+        Provider<StorageImpl>(
           create: (_) => StorageImpl(),
         ),
         ListenableProvider<HomeController>(
